@@ -62,7 +62,7 @@ public class Synthuesizer extends JFrame {
                 VK_0};
 
         System.out.println("Creating sound...");
-        Sound sound = new Sound(91, 40, keysLowToHigh.length);
+        Sound sound = new Sound(1, 40, keysLowToHigh.length);
         new SoundControls(comp, sound);
 
         System.out.println("Creating light...");
