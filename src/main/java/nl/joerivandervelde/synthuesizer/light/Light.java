@@ -50,9 +50,9 @@ public class Light {
                     "settings. Network unreachable or bad properties " +
                     "file? Ignoring light inputs.");
         }
-        modes = new LightMode[]{new Cyberpunk(), new Desert(), new Disco(),
-                new Forest(), new Frozen(), new Hell(), new Lavender(),
-                new Thunder(), new Strobe()};
+        modes = new LightMode[]{new Angelic(), new Cyberpunk(), new Desert(),
+                new Disco(), new Forest(), new Frozen(), new Hell(),
+                new Lavender(), new Thunder(), new Strobe()};
         changeModeTo(0);
     }
 
