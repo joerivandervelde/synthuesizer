@@ -30,7 +30,16 @@ public class Synthuesizer extends JFrame {
     public static final int HUE_SLOW_TTIME = 5;
 
     /**
-     * Constructor
+     * Constructor without props
+     *
+     * @throws Exception
+     */
+    public Synthuesizer() throws Exception {
+        new Synthuesizer(null);
+    }
+
+    /**
+     * Constructor with props
      *
      * @param propsFileLoc
      * @throws Exception
@@ -38,10 +47,15 @@ public class Synthuesizer extends JFrame {
     public Synthuesizer(String propsFileLoc) throws Exception {
 
         System.out.println("Starting up Synthuesizer...");
-
-        System.out.println("Loading properties file...");
-        GetProperties gp = new GetProperties(propsFileLoc);
-        Properties props = gp.getProperties();
+        Properties props = new Properties();
+        if(propsFileLoc != null){
+            System.out.println("Loading properties file...");
+            GetProperties gp = new GetProperties(propsFileLoc);
+            props = gp.getProperties();
+        }else{
+            props.setProperty(GetProperties.BRIDGE_IP, "na");
+            props.setProperty(GetProperties.API_KEY, "na");
+        }
 
         System.out.println("Creating JFrame...");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
