@@ -62,7 +62,7 @@ public abstract class LightModePalette implements LightMode {
                                              Collection<Room> light) {
         current = getNextNonCurrentRandom();
         for (Room r : light) {
-            r.setState(State.builder().color(getColors()[current])
+            r.setState(State.builder().color(io.github.zeroone3010.yahueapi.Color.of(getColors()[current]))
                     .transitionTime(HUE_FAST_TTIME).on());
         }
     }
@@ -76,7 +76,7 @@ public abstract class LightModePalette implements LightMode {
     @Override public void performReleaseAction(int noteNumber,
                                                Collection<Room> light) {
         for (Room r : light) {
-            r.setState(State.builder().color(getColors()[current].darker())
+            r.setState(State.builder().color(io.github.zeroone3010.yahueapi.Color.of(getColors()[current].darker()))
                     .transitionTime(HUE_SLOW_TTIME).on());
         }
     }

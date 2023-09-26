@@ -41,7 +41,7 @@ public class Light {
             hue.setCaching(true);
             lights = hue.getRooms();
             for (Room r : lights) {
-                r.setState(State.builder().color(Color.GRAY).on());
+                r.setState(State.builder().color(io.github.zeroone3010.yahueapi.Color.of(Color.GRAY)).on());
             }
             hueConnected = true;
         } catch (Exception e) {

@@ -20,7 +20,7 @@ public class Strobe implements LightMode {
                                              Collection<Room> light) {
         for (Room r : light) {
             r.setState(
-                    State.builder().color(Color.WHITE)
+                    State.builder().color(io.github.zeroone3010.yahueapi.Color.of(Color.WHITE))
                             .transitionTime(HUE_FAST_TTIME).on());
         }
     }
@@ -29,7 +29,7 @@ public class Strobe implements LightMode {
     public void performReleaseAction(int noteNumber, Collection<Room> light) {
         for (Room r : light) {
             r.setState(
-                    State.builder().color(Color.WHITE)
+                    State.builder().color(io.github.zeroone3010.yahueapi.Color.of(Color.WHITE))
                             .transitionTime(HUE_FAST_TTIME).off());
         }
     }
